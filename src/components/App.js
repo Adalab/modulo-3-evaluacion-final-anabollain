@@ -12,6 +12,7 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Loading from './Loading';
+import NotFoundPage from './NotFoundPage';
 //routes
 import {Routes, Route} from 'react-router-dom';
 //styles
@@ -80,6 +81,7 @@ function App() {
           }
           />
           <Route path='/character/:id' element={<CharacterDetail findCharacter={findCharacter}/>}/>
+          <Route path='*' element={<NotFoundPage/>}/>
         </Routes>
       </>
     );

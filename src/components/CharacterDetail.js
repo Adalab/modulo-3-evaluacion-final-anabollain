@@ -1,5 +1,7 @@
 //react libraries
 import { useParams, NavLink, redirect } from 'react-router-dom';
+//components
+import NotFoundPage from './NotFoundPage';
 
 function CharacterDetail(props) {
 
@@ -28,20 +30,27 @@ function CharacterDetail(props) {
     }
   };
 
-  //RETURN
-  return (
-    <article>
-      <img src={foundCharacter.photo} alt={foundCharacter.name}/>
-      <h2>{foundCharacter.name}</h2>
-      <ul>
-        <li>Status: {renderIconStatus()}</li>
-        <li>Species: {renderIconSpecies()}</li>
-        <li>Origin: {foundCharacter.origin}</li>
-        <li>Episodes: {foundCharacter.episodes}</li>
-      </ul>
-      <NavLink to='/'>Return</NavLink>
-    </article>
-    );
+  if (foundCharacter !== undefined){
+    //RETURN
+    return (
+      <article>
+        <img src={foundCharacter.photo} alt={foundCharacter.name}/>
+        <h2>{foundCharacter.name}</h2>
+        <ul>
+          <li>Status: {renderIconStatus()}</li>
+          <li>Species: {renderIconSpecies()}</li>
+          <li>Origin: {foundCharacter.origin}</li>
+          <li>Episodes: {foundCharacter.episodes}</li>
+        </ul>
+        <NavLink to='/'>Return</NavLink>
+      </article>
+      );
+  }else{
+    return(
+      <NotFoundPage/>
+    )
+  }
+  
 }
 
 CharacterDetail.propTypes = {
