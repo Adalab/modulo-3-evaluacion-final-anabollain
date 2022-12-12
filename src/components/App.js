@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react';
 //import PropTypes from 'prop-types';
 //services
 import callToApi from '../services/api';
-//import ls from '../services/localStorage';
+import ls from '../services/localStorage';
 //components
 import Header from './Header';
 import Filters from './Filters';
@@ -21,18 +21,20 @@ import '../styles/App.scss';
 function App() {
 
   //STATE VARIABLES
+  //Data
   //Character list to fill with returned data from API call
   const [dataCharacters, setDataCharacters] = useState ([]);
+  //Filters
   //FilterByName input
-  const [inputName, setInputName] = useState('');
+  const [inputName, setInputName] = useState(ls.get('nameInput', ''));
   //FilterBySpecies input
-  const [inputSpecies, setInputSpecies] = useState('');
+  const [inputSpecies, setInputSpecies] = useState(ls.get('speciesInput', ''));
   //FilterByStatus input
-  const [inputStatus, setInputStatus] = useState('');
-  //Clicked detail character responding to each url
-  //const [foundCharacter, setFoundCharacter] = useState('');
+  const [inputStatus, setInputStatus] = useState(ls.get('statusInput', ''));
+  //Tools
   //Flag to get fetch status and a loader while waiting for the response
   const [isLoading, setIsLoading] = useState(true);
+
 
   //USE EFFECT
   useEffect (()=> {
@@ -42,21 +44,24 @@ function App() {
     });
   }, []);
 
+
   //EVENT FUNCTIONS
   //Filters
   //Lifting function to get name input information from user
   const handleNameInput = (value) => {
     setInputName(value);
+    ls.set('nameInput', value);
   }
   //Lifting function to get species select input information from user
   const handleSpeciesInput = (value) => {
     setInputSpecies(value);
+    ls.set('speciesInput', value);
   }
   //Lifting function to get status radio input information from user
   const handleStatusInput = (value) => {
     setInputStatus(value);
+    ls.set('statusInput', value);
   }
-  
   //Card Detail
   //Function to find the character responding to the id of the selected url
   const findCharacter = (value) => {
