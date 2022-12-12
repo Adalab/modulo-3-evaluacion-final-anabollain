@@ -23,7 +23,6 @@ function App() {
   //USE EFFECT
   useEffect (()=> {
     callToApi().then ((data) => {
-      console.log(data)
       setDataCharacters(data);
     });
   }, []);
@@ -36,10 +35,10 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={
-          <>
+          <main>
             <Filters/>
-            <CharacterList/>
-          </>
+            <CharacterList dataCharacters={dataCharacters}/>
+          </main>
         }
         />
       </Routes>

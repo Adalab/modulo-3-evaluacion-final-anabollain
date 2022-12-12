@@ -1,5 +1,5 @@
 const callToApi = () => {
-    return fetch ("https://rickandmortyapi.com/api/character/?page=2")
+    return fetch ("https://rickandmortyapi.com/api/character/?page=1")
     .then ((response) => response.json())
     .then ((data) => {
         const cleanData = data.results.map((eachData) => {
@@ -7,7 +7,8 @@ const callToApi = () => {
                 //for each object of the array, we create a new object with the desired properties
                 name: eachData.name,
                 species: eachData.species,
-                photo: eachData.image
+                photo: eachData.image,
+                id: eachData.id
                 //don't forget the id: id: eachData.id ? eachData.id : crypto.randomUUID(), 
             };
         });
