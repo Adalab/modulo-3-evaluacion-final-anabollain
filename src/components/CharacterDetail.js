@@ -1,5 +1,5 @@
 //react libraries
-import { useParams, NavLink } from 'react-router-dom';
+import { useParams, NavLink, redirect } from 'react-router-dom';
 
 function CharacterDetail(props) {
 
@@ -7,14 +7,35 @@ function CharacterDetail(props) {
   const params = useParams();
   //Function to get the info of the selected element from the original array, id of url matches with each object id of the array
   const foundCharacter = props.findCharacter(params.id);
-  
+  //Icon for dead or alive
+  const renderIconSpecies = () => {
+    if(foundCharacter.species === 'Alien'){
+      return <i className="fa-brands fa-reddit-alien" style={{color: "red"}}></i>
+    }else if(foundCharacter.species === 'Human'){
+      return <i className="fa-solid fa-user" style={{color: "red"}}></i>;
+    }else{
+      return null;
+    }
+  };
+  //Icon for alien or human
+  const renderIconStatus = () => {
+    if(foundCharacter.status === 'Alive'){
+      return <i className="fa-solid fa-heart" style={{color: "red"}}></i>
+    }else if(foundCharacter.status === 'Dead'){
+      return <i className="fa-solid fa-skull" style={{color: "red"}}></i>
+    }else{
+      return null;
+    }
+  };
+
   //RETURN
   return (
     <article>
+      <img src={foundCharacter.photo} alt={foundCharacter.name}/>
       <h2>{foundCharacter.name}</h2>
       <ul>
-        <li>Status: {foundCharacter.name}</li>
-        <li>Species: {foundCharacter.species}</li>
+        <li>Status: {renderIconStatus()}</li>
+        <li>Species: {renderIconSpecies()}</li>
         <li>Origin: {foundCharacter.origin}</li>
         <li>Episodes: {foundCharacter.episodes}</li>
       </ul>

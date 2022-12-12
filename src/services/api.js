@@ -10,7 +10,7 @@ const callToApi = () => {
                 species: eachData.species,
                 photo: eachData.image,
                 origin: eachData.origin.name,
-                episodeNumber: eachData.episode.length,
+                episodes: eachData.episode.length,
                 status: eachData.status
                 //don't forget the id: id: eachData.id ? eachData.id : crypto.randomUUID(), 
             };
