@@ -11,6 +11,7 @@ import Header from './Header';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
+import Loading from './Loading';
 //routes
 import {Routes, Route} from 'react-router-dom';
 //styles
@@ -24,12 +25,15 @@ function App() {
   //FilterByName input
   const [inputName, setInputName] = useState('');
   //Clicked detail character responding to each url
-  const [foundCharacter, setFoundCharacter] = useState('');
+  //const [foundCharacter, setFoundCharacter] = useState('');
+  //Flag to get fetch status and a loader while waiting for the response
+  const [isLoading, setIsLoading] = useState(true);
 
   //USE EFFECT
   useEffect (()=> {
     callToApi().then ((data) => {
       setDataCharacters(data);
+      setIsLoading(false);
     });
   }, []);
 
@@ -52,24 +56,31 @@ function App() {
     .filter((eachData) => eachData.name.toLowerCase().includes(inputName.toLowerCase()))
   };
 
-
-
   //RETURN
-  return (
-    <>
-      <Header />
-      <Routes>
-        <Route path='/' element={
-          <main>
-            <Filters inputName={inputName} handleNameInput={handleNameInput}/>
-            <CharacterList dataCharacters={filteredCharacters()}/>
-          </main>
-        }
-        />
-        <Route path='/character/:id' element={<CharacterDetail findCharacter={findCharacter}/>}/>
-      </Routes>
-    </>
-  );
+  if (isLoading === false){
+    return (
+      <>
+        <Header />
+        <Routes>
+          <Route path='/' element={
+            <main>
+              <Filters inputName={inputName} handleNameInput={handleNameInput}/>
+              <CharacterList dataCharacters={filteredCharacters()}/>
+            </main>
+          }
+          />
+          <Route path='/character/:id' element={<CharacterDetail findCharacter={findCharacter}/>}/>
+        </Routes>
+      </>
+    );
+  }else{
+    return(
+      <>
+        <Loading/>
+      </>
+    );
+  }
+  
 }
 
 export default App;
