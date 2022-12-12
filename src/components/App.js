@@ -27,6 +27,8 @@ function App() {
   const [inputName, setInputName] = useState('');
   //FilterBySpecies input
   const [inputSpecies, setInputSpecies] = useState('');
+  //FilterByStatus input
+  const [inputStatus, setInputStatus] = useState('');
   //Clicked detail character responding to each url
   //const [foundCharacter, setFoundCharacter] = useState('');
   //Flag to get fetch status and a loader while waiting for the response
@@ -50,6 +52,10 @@ function App() {
   const handleSpeciesInput = (value) => {
     setInputSpecies(value);
   }
+  //Lifting function to get status radio input information from user
+  const handleStatusInput = (value) => {
+    setInputStatus(value);
+  }
   
   //Card Detail
   //Function to find the character responding to the id of the selected url
@@ -64,7 +70,8 @@ function App() {
   const filteredCharacters = () => {
     return dataCharacters
     .filter((eachData) => eachData.name.toLowerCase().includes(inputName.toLowerCase()))
-    .filter((eachData)=> inputSpecies === '' ? true :  eachData.species.toLowerCase() === inputSpecies.toLowerCase())
+    .filter((eachData) => inputSpecies === '' ? true :  eachData.species.toLowerCase() === inputSpecies.toLowerCase())
+    .filter((eachData) => inputStatus === '' ? true : eachData.status.toLowerCase() === inputStatus.toLowerCase());
   };
 
   //RETURN
@@ -75,7 +82,7 @@ function App() {
         <Routes>
           <Route path='/' element={
             <main>
-              <Filters inputName={inputName} handleNameInput={handleNameInput} inputSpecies={inputSpecies} handleSpeciesInput={handleSpeciesInput}/>
+              <Filters inputName={inputName} handleNameInput={handleNameInput} inputSpecies={inputSpecies} handleSpeciesInput={handleSpeciesInput} inputStatus={inputStatus} handleStatusInput={handleStatusInput}/>
               <CharacterList dataCharacters={filteredCharacters()} inputName={inputName}/>
             </main>
           }

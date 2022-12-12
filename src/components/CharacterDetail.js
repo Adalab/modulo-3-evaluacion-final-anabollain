@@ -1,5 +1,5 @@
 //react libraries
-import { useParams, NavLink, redirect } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 //components
 import NotFoundPage from './NotFoundPage';
 
