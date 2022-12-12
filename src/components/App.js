@@ -45,7 +45,6 @@ function App() {
   //Function to find the character responding to the id of the selected url
   const findCharacter = (value) => {
     return dataCharacters.find((eachData) => parseInt(eachData.id) === parseInt(value));
-    
     //setFoundCharacter(foundCharacter);
   }
 
@@ -65,7 +64,7 @@ function App() {
           <Route path='/' element={
             <main>
               <Filters inputName={inputName} handleNameInput={handleNameInput}/>
-              <CharacterList dataCharacters={filteredCharacters()}/>
+              <CharacterList dataCharacters={filteredCharacters()} inputName={inputName}/>
             </main>
           }
           />

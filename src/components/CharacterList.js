@@ -3,14 +3,19 @@ import CharacterCard from './CharacterCard';
 //styles
 
 
-function CharacterList({dataCharacters}) {
+function CharacterList({dataCharacters, inputName}) {
 
   //RENDER FUNCTIONS
   //Render returned data from API call 
   const renderData = () => {
-    return dataCharacters.map((eachData) =>{
-      return <CharacterCard key={eachData.id} eachData={eachData}/>
-    })
+    if(dataCharacters.length !== 0){
+      return dataCharacters.map((eachData) =>{
+        return <CharacterCard key={eachData.id} eachData={eachData}/>
+      })
+    }else{
+      return <p> Oops, looks like no character responds to the name {inputName}. Try again with another one!</p>
+    }
+    
   }
 
   return (
