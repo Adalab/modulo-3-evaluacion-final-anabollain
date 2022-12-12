@@ -72,7 +72,7 @@ function App() {
   const handleResetBtn = () =>{
     //Empty or restore all inputs
     setInputName('');
-    setInputStatus('');
+    setInputStatus('all');
     setInputSpecies('');
     ls.remove('nameInput');
     ls.remove('speciesInput');

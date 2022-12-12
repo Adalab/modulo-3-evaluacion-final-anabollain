@@ -1,3 +1,6 @@
+//styles
+import '../styles/components/FilterByStatus.scss';
+
 function FilterByStatus(props) {
 
     //EVENT FUNCTIONS
@@ -7,19 +10,19 @@ function FilterByStatus(props) {
 
     //RETURN
     return (
-        <fieldset>
-            <legend>Dead or alive?</legend>
-            <label htmlFor="all">
-                <input type="radio" id="all" name="status" value="all" checked={props.inputStatus === 'all'} onChange={handleInput} />
-                <span>Don't care</span>
+        <fieldset className='form__radio'>
+            <label className='form__radio--legend'>Dead or alive?</label>
+            <label htmlFor="all" className='form__radio--label'>
+                <input type="radio" id="all" name="status" value="all" className='form__radio--input' checked={props.inputStatus === 'all'} onChange={handleInput} />
+                <span className='form__radio--icon'>Don't care</span>
             </label>
-            <label htmlFor="alive">
-                <input type="radio" id="alive" name="status" value="alive" checked={props.inputStatus === 'alive'} onChange={handleInput} />
-                <i className="fa-solid fa-heart" style={{ color: "red" }}></i>
+            <label htmlFor="alive" className='form__radio--label'>
+                <input type="radio" id="alive" name="status" value="alive" className='form__radio--input' checked={props.inputStatus === 'alive'} onChange={handleInput} />
+                <i className="form__radio--icon fa-solid fa-heart"></i>
             </label>
-            <label htmlFor="dead">
-                <input type="radio" id="dead" name="status" value="dead" checked={props.inputStatus === 'dead'} onChange={handleInput} />
-                <i className="fa-solid fa-skull" style={{ color: "red" }}></i>
+            <label htmlFor="dead" className='form__radio--label'>
+                <input type="radio" id="dead" name="status" value="dead" className='form__radio--input' checked={props.inputStatus === 'dead'} onChange={handleInput} />
+                <i className="form__radio--icon fa-solid fa-skull" ></i>
             </label>
         </fieldset>
     );

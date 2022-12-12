@@ -1,21 +1,19 @@
 //libraries
 import { Link } from 'react-router-dom';
+//images
+import logo from '../images/Rick_and_Morty.png'
 //styles
-//import '../styles/components/Header.scss';
+import '../styles/components/Header.scss';
 
 
 function Header() {
 
   return (
     <header className='header'>
-            <Link to='/' className='header__title'>
-                <h1>Rick And Morty</h1>
+            <h1 className='header__title'>Rick And Morty</h1>
+            <Link to='/' className='header__link'>
+                <img src={logo} alt="Rick and Morty Logo" className='header__link--logo'/>
             </Link>
-            <nav>
-                <ul className='header__nav'>
-                    <li><Link to="/" className='header__nav--link'>Home</Link></li>
-                </ul>
-            </nav>
         </header>
     );
 }

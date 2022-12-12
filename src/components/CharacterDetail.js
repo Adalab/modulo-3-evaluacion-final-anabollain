@@ -2,6 +2,8 @@
 import { useParams, NavLink } from 'react-router-dom';
 //components
 import NotFoundPage from './NotFoundPage';
+//styles
+import '../styles/components/CharacterDetail.scss';
 
 function CharacterDetail(props) {
 
@@ -33,17 +35,22 @@ function CharacterDetail(props) {
   if (foundCharacter !== undefined){
     //RETURN
     return (
-      <article>
-        <img src={foundCharacter.photo} alt={foundCharacter.name}/>
-        <h2>{foundCharacter.name}</h2>
-        <ul>
-          <li>Status: {renderIconStatus()}</li>
-          <li>Species: {renderIconSpecies()}</li>
-          <li>Origin: {foundCharacter.origin}</li>
-          <li>Episodes: {foundCharacter.episodes}</li>
-        </ul>
-        <NavLink to='/'>Return</NavLink>
-      </article>
+      <main className='main__detail'>
+        <div className='main__detail--background'></div>
+        <article className='detail'>
+        <NavLink to='/' className='detail__info--link'><i class="fa-solid fa-arrow-left"></i></NavLink>
+          <img className='detail__img' src={foundCharacter.photo} alt={foundCharacter.name}/>
+          <div className='detail__info'>
+            <h2 className='detail__info--title' >{foundCharacter.name}</h2>
+            <ul className='detail__info--list' >
+              <li className='detail__list--item'>Status: {renderIconStatus()}</li>
+              <li className='detail__list--item'>Species: {renderIconSpecies()}</li>
+              <li className='detail__list--item'>Origin: {foundCharacter.origin}</li>
+              <li className='detail__list--item'>Episodes: {foundCharacter.episodes}</li>
+            </ul>
+          </div>
+        </article>
+      </main>
       );
   }else{
     return(

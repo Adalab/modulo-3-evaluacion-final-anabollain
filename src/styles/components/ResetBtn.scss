@@ -1,0 +1,15 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+
+.form{
+    &__reset{
+        cursor: pointer;
+        @include input ();
+        &:hover{
+            background-color: $color-green;
+            color: $color-white;
+        }
+    }
+}

@@ -1,7 +1,10 @@
+//components
 import FilterByName from './FilterByName';
 import FilterBySpecies from './FilterBySpecies';
 import FilterByStatus from './FilterByStatus';
 import ResetBtn from './ResetBtn';
+//styles
+import '../styles/components/Filters.scss';
 
 function Filters(props) {
   //EVENT FUNCTIONS
@@ -12,7 +15,7 @@ function Filters(props) {
   //RETURN
   return (
     <section>
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <FilterByName inputName={props.inputName}  handleNameInput={props.handleNameInput}/>
         <FilterBySpecies inputSpecies={props.inputSpecies} handleSpeciesInput={props.handleSpeciesInput}/>
         <FilterByStatus inputStatus={props.inputStatus} handleStatusInput={props.handleStatusInput}/>

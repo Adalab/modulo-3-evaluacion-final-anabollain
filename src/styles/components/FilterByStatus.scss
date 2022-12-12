@@ -1,0 +1,33 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+
+.form{
+    &__radio{
+        //General properties
+        @include fieldset ();
+        display: flex;
+        gap: rem(20);
+        padding-left: rem(20);
+        padding-right: rem(20);
+        cursor: pointer;
+        &--legend{
+            display: inline;
+        }
+        &--label{
+            //padding-right: rem(20);
+        }
+        &--icon{
+            cursor: pointer;
+            color: $color-dark;
+            padding-left: rem(10);
+            &:hover{
+                color: $color-green;
+            }
+        }
+        &--input{
+            cursor: pointer;
+        }
+    }
+}

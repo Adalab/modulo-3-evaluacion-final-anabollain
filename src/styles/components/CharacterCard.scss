@@ -1,0 +1,50 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+
+.card{
+    &__link{
+        @include linkReset();
+        font-size: rem(22);
+        padding: rem(5);
+        &:hover{
+            color: $color-green;
+        }
+    }
+    &__item{
+        //General properties
+        width: rem(280);
+        height: rem(380);
+        border-radius: rem(20);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        //Display
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: rem(12);
+        &:hover{
+            //background-color: $color-green;
+            border-radius: rem(30);
+        }
+        &--img{
+            width: 100%;
+            border-top-left-radius: rem(20);
+            border-top-right-radius: rem(20);
+            height: rem(250);
+            object-fit: cover;
+            object-position: center center;
+            &:hover{
+                border-top-left-radius: rem(30);
+                border-top-right-radius: rem(30);
+            }
+        }
+        &--title{
+            font-size: rem(14);
+            padding-top: rem(10);
+        }
+        &--text{
+            font-size: rem(10);
+        }
+    }
+}

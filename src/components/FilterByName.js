@@ -1,3 +1,6 @@
+//styles
+import '../styles/components/FilterByName.scss';
+
 function FilterByName(props) {
 
   //EVENT FUNCTIONS
@@ -7,10 +10,10 @@ function FilterByName(props) {
 
   //RETURN
   return (
-    <>
-      <label htmlFor='name'>Name</label>
-      <input type="text" id='name' name='name' value={props.inputName} onChange={handleInput}/>
-    </>
+    <div className='form__text'>
+      <label htmlFor='name' className='form__text--label'>Name</label>
+      <input type="text" id='name' name='name'className='form__text--input' value={props.inputName} onChange={handleInput}/>
+    </div>
     );
 }
 

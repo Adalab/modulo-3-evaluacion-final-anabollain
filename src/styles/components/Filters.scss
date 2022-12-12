@@ -3,21 +3,12 @@
 @import '../core/functions';
 @import '../core/mixins';
 
-.header{
+.form{
     //General properties
-    height: 25vh;
+    height: 20vh;
     //Display
     display: flex;
     justify-content: center;
     align-items: center;
-    &__title{
-        display: none;
-    }
-    &__link{
-        z-index: 50;
-        @include linkReset ();
-        &--logo{
-            width: rem(380);
-        }
-    }
+    gap: rem(50);
 }

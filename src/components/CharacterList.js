@@ -1,6 +1,7 @@
 //components
 import CharacterCard from './CharacterCard';
 //styles
+import '../styles/components/CharacterList.scss';
 
 
 function CharacterList({dataCharacters, inputName}) {
@@ -19,8 +20,8 @@ function CharacterList({dataCharacters, inputName}) {
   }
 
   return (
-    <section>
-      <ul>{renderData()}</ul>
+    <section className='characters'>
+      <ul className='card'>{renderData()}</ul>
     </section>
     );
 }

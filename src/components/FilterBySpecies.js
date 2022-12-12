@@ -1,3 +1,6 @@
+//styles
+import '../styles/components/FilterBySpecies.scss';
+
 function FilterBySpecies(props) {
 
   //EVENT FUNCTION
@@ -6,14 +9,14 @@ function FilterBySpecies(props) {
   }
 
   return (
-    <>
-      <label>Species</label>
-      <select name="species" id="species" value={props.inputSpecies} onChange={handleInput}>
+    <div className='form__select'>
+      <label className='form__select--label'>Species</label>
+      <select name="species" id="species" className='form__select--item' value={props.inputSpecies} onChange={handleInput}>
         <option value="">All</option>
         <option value="human">Human</option>
         <option value="alien">Alien</option>
       </select>
-      </>
+      </div>
     );
 }
 
