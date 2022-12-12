@@ -10,6 +10,7 @@ import callToApi from '../services/api';
 import Header from './Header';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
 //routes
 import {Routes, Route} from 'react-router-dom';
 //styles
@@ -22,6 +23,8 @@ function App() {
   const [dataCharacters, setDataCharacters] = useState ([]);
   //FilterByName input
   const [inputName, setInputName] = useState('');
+  //Clicked detail character responding to each url
+  const [foundCharacter, setFoundCharacter] = useState('');
 
   //USE EFFECT
   useEffect (()=> {
@@ -34,6 +37,12 @@ function App() {
   //Lifting function to get name input information from user
   const handleNameInput = (value) => {
     setInputName(value);
+  }
+  //Function to find the character responding to the id of the selected url
+  const findCharacter = (value) => {
+    return dataCharacters.find((eachData) => parseInt(eachData.id) === parseInt(value));
+    
+    //setFoundCharacter(foundCharacter);
   }
 
   //RENDER FUNCTIONS
@@ -57,6 +66,7 @@ function App() {
           </main>
         }
         />
+        <Route path='/character/:id' element={<CharacterDetail findCharacter={findCharacter}/>}/>
       </Routes>
     </>
   );

@@ -5,10 +5,13 @@ const callToApi = () => {
         const cleanData = data.results.map((eachData) => {
             return {
                 //for each object of the array, we create a new object with the desired properties
+                id: eachData.id,
                 name: eachData.name,
                 species: eachData.species,
                 photo: eachData.image,
-                id: eachData.id
+                origin: eachData.origin.name,
+                episodeNumber: eachData.episode.length,
+                status: eachData.status
                 //don't forget the id: id: eachData.id ? eachData.id : crypto.randomUUID(), 
             };
         });
