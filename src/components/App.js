@@ -7,10 +7,11 @@ import React from 'react';
 //import callToApi from '../services/api';
 //import ls from '../services/localStorage';
 //components
-//data, if we save data from API call in local file
-//import data from '../data';
+import Header from './Header';
+import Filters from './Filters';
+import CharacterList from './CharacterList';
 //routes
-//import {Routes, Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 //styles
 import '../styles/App.scss';
 
@@ -26,8 +27,18 @@ function App() {
   //RENDER FUNCTIONS
   //RETURN
   return (
-    <div>Hola mundo</div>
-    
+    <>
+      <Header />
+      <Routes>
+        <Route path='/' element={
+          <>
+            <Filters/>
+            <CharacterList/>
+          </>
+        }
+        />
+      </Routes>
+    </>
   );
 }
 
