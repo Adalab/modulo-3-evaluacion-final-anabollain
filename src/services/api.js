@@ -1,16 +1,18 @@
 const callToApi = () => {
-    //return fetch ('url')
-    //.then ((response) => response.json())
-    //.then ((data) => {
-        //Careful! Study API response to see if it's necessary to clean it, and which part of the returned object we should clean
-        //const cleanData = data.map((eachData) => {
-            //return {
+    return fetch ("https://rickandmortyapi.com/api/character/?page=2")
+    .then ((response) => response.json())
+    .then ((data) => {
+        const cleanData = data.results.map((eachData) => {
+            return {
                 //for each object of the array, we create a new object with the desired properties
+                name: eachData.name,
+                species: eachData.species,
+                photo: eachData.image
                 //don't forget the id: id: eachData.id ? eachData.id : crypto.randomUUID(), 
-            //};
-        //});
-        //return cleanData;
-    //});
+            };
+        });
+        return cleanData;
+    });
 };
 
 export default callToApi;

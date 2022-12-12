@@ -1,10 +1,10 @@
 import React from 'react';
 //react libraries
-//import {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 //props
 //import PropTypes from 'prop-types';
 //services
-//import callToApi from '../services/api';
+import callToApi from '../services/api';
 //import ls from '../services/localStorage';
 //components
 import Header from './Header';
@@ -16,13 +16,18 @@ import {Routes, Route} from 'react-router-dom';
 import '../styles/App.scss';
 
 function App() {
+
   //STATE VARIABLES
+  const [dataCharacters, setDataCharacters] = useState ([]);
+
   //USE EFFECT
-  /*useEffect (()=> {
+  useEffect (()=> {
     callToApi().then ((data) => {
-      console.log(data);
+      console.log(data)
+      setDataCharacters(data);
     });
-  }, []);*/
+  }, []);
+
   //EVENT FUNCTIONS
   //RENDER FUNCTIONS
   //RETURN
