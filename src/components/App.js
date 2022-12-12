@@ -24,6 +24,8 @@ function App() {
   const [dataCharacters, setDataCharacters] = useState ([]);
   //FilterByName input
   const [inputName, setInputName] = useState('');
+  //FilterBySpecies input
+  const [inputSpecies, setInputSpecies] = useState('');
   //Clicked detail character responding to each url
   //const [foundCharacter, setFoundCharacter] = useState('');
   //Flag to get fetch status and a loader while waiting for the response
@@ -38,21 +40,30 @@ function App() {
   }, []);
 
   //EVENT FUNCTIONS
+  //Filters
   //Lifting function to get name input information from user
   const handleNameInput = (value) => {
     setInputName(value);
   }
+  //Lifting function to get species select input information from user
+  const handleSpeciesInput = (value) => {
+    setInputSpecies(value);
+  }
+  
+  //Card Detail
   //Function to find the character responding to the id of the selected url
   const findCharacter = (value) => {
     return dataCharacters.find((eachData) => parseInt(eachData.id) === parseInt(value));
     //setFoundCharacter(foundCharacter);
   }
 
+
   //RENDER FUNCTIONS
   //Function with filters with each input value to get the array to be rendered
   const filteredCharacters = () => {
     return dataCharacters
     .filter((eachData) => eachData.name.toLowerCase().includes(inputName.toLowerCase()))
+    .filter((eachData)=> inputSpecies === '' ? true :  eachData.species.toLowerCase() === inputSpecies.toLowerCase())
   };
 
   //RETURN
@@ -63,7 +74,7 @@ function App() {
         <Routes>
           <Route path='/' element={
             <main>
-              <Filters inputName={inputName} handleNameInput={handleNameInput}/>
+              <Filters inputName={inputName} handleNameInput={handleNameInput} inputSpecies={inputSpecies} handleSpeciesInput={handleSpeciesInput}/>
               <CharacterList dataCharacters={filteredCharacters()} inputName={inputName}/>
             </main>
           }

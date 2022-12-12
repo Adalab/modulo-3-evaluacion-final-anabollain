@@ -12,7 +12,7 @@ function Filters(props) {
     <section>
       <form onSubmit={handleSubmit}>
         <FilterByName inputName={props.inputName}  handleNameInput={props.handleNameInput}/>
-        <FilterBySpecies/>
+        <FilterBySpecies inputSpecies={props.inputSpecies} handleSpeciesInput={props.handleSpeciesInput}/>
       </form>
     </section>
     );
