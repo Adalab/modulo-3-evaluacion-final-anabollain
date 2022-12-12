@@ -16,7 +16,7 @@ function Filters(props) {
         <FilterByName inputName={props.inputName}  handleNameInput={props.handleNameInput}/>
         <FilterBySpecies inputSpecies={props.inputSpecies} handleSpeciesInput={props.handleSpeciesInput}/>
         <FilterByStatus inputStatus={props.inputStatus} handleStatusInput={props.handleStatusInput}/>
-        <ResetBtn/>
+        <ResetBtn handleResetBtn={props.handleResetBtn}/>
       </form>
     </section>
     );

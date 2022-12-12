@@ -30,7 +30,7 @@ function App() {
   //FilterBySpecies input
   const [inputSpecies, setInputSpecies] = useState(ls.get('speciesInput', ''));
   //FilterByStatus input
-  const [inputStatus, setInputStatus] = useState(ls.get('statusInput', ''));
+  const [inputStatus, setInputStatus] = useState(ls.get('statusInput', 'all'));
   //Tools
   //Flag to get fetch status and a loader while waiting for the response
   const [isLoading, setIsLoading] = useState(true);
@@ -68,7 +68,16 @@ function App() {
     return dataCharacters.find((eachData) => parseInt(eachData.id) === parseInt(value));
     //setFoundCharacter(foundCharacter);
   }
-
+  //Reset button
+  const handleResetBtn = () =>{
+    //Empty or restore all inputs
+    setInputName('');
+    setInputStatus('');
+    setInputSpecies('');
+    ls.remove('nameInput');
+    ls.remove('speciesInput');
+    ls.remove('statusInput');
+  }
 
   //RENDER FUNCTIONS
   //Function with filters with each input value to get the array to be rendered
@@ -76,7 +85,7 @@ function App() {
     return dataCharacters
     .filter((eachData) => eachData.name.toLowerCase().includes(inputName.toLowerCase()))
     .filter((eachData) => inputSpecies === '' ? true :  eachData.species.toLowerCase() === inputSpecies.toLowerCase())
-    .filter((eachData) => inputStatus === '' ? true : eachData.status.toLowerCase() === inputStatus.toLowerCase());
+    .filter((eachData) => inputStatus === 'all' ? true : eachData.status.toLowerCase() === inputStatus.toLowerCase());
   };
 
   //RETURN
@@ -87,7 +96,7 @@ function App() {
         <Routes>
           <Route path='/' element={
             <main>
-              <Filters inputName={inputName} handleNameInput={handleNameInput} inputSpecies={inputSpecies} handleSpeciesInput={handleSpeciesInput} inputStatus={inputStatus} handleStatusInput={handleStatusInput}/>
+              <Filters inputName={inputName} handleNameInput={handleNameInput} inputSpecies={inputSpecies} handleSpeciesInput={handleSpeciesInput} inputStatus={inputStatus} handleStatusInput={handleStatusInput} handleResetBtn={handleResetBtn}/>
               <CharacterList dataCharacters={filteredCharacters()} inputName={inputName}/>
             </main>
           }

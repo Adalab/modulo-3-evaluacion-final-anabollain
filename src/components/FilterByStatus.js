@@ -9,6 +9,10 @@ function FilterByStatus(props) {
     return (
         <fieldset>
             <legend>Dead or alive?</legend>
+            <label htmlFor="all">
+                <input type="radio" id="all" name="status" value="all" checked={props.inputStatus === 'all'} onChange={handleInput} />
+                <span>Don't care</span>
+            </label>
             <label htmlFor="alive">
                 <input type="radio" id="alive" name="status" value="alive" checked={props.inputStatus === 'alive'} onChange={handleInput} />
                 <i className="fa-solid fa-heart" style={{ color: "red" }}></i>

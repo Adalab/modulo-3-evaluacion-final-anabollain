@@ -1,12 +1,12 @@
 function ResetBtn(props) {
-
-  return (
-    <></>
-    );
+  const handleReset = (ev) => {
+      ev.preventDefault();
+      props.handleResetBtn();
+  }
+return (
+  <button type="reset" onClick={handleReset}>Reset</button>
+  );
 }
 
-ResetBtn.propTypes = {
-
-};
 
 export default ResetBtn;
