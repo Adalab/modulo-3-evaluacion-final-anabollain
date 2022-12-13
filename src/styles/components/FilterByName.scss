@@ -12,11 +12,12 @@
         //Display
         display: flex;
         flex-direction: column;
-        gap: rem(25);
+        gap: rem(10);
         @include mediaTablet(){
             width: 100%;
             flex-direction: row;
             justify-content: space-between;
+            gap: rem(25);
         }
         @include mediaDesktop(){
             width: fit-content;

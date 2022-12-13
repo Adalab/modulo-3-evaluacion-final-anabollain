@@ -2,6 +2,8 @@
 @import '../core/reset';
 @import '../core/functions';
 @import '../core/mixins';
+@import '../core/mediaqueries';
+
 
 .characters{
     display: flex;
@@ -20,8 +22,8 @@
     gap: rem(30);
     &__error{
         //General properties
-        width: rem(500);
-        height: rem(350);
+        width: rem(250);
+        height: rem(250);
         border-radius: rem(20);
         padding: rem(15);
         background-color: rgba(255,255,255,0.6);
@@ -32,15 +34,25 @@
         justify-content: center;
         align-items: center;
         gap: rem(15);
+        @include mediaDesktop(){
+            width: rem(500);
+            height: rem(350);
+        }
         &--img{
-            width: rem(400);
+            width: rem(200);
             border-radius: rem(20);
+            @include mediaDesktop(){
+                width: rem(400);
+            }
         }
         &--text{
-            width: rem(300);
+            width: rem(150);
             color: $color-green;
             text-align: center;
             font-size: rem(12);
+            @include mediaDesktop(){
+                width: rem(300);
+            }
             &--word{
                 font-weight: bold;
                 color: $color-pink;

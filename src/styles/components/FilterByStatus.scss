@@ -14,9 +14,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: rem(25);
+        gap: rem(10);
         @include mediaDesktop(){
             width: fit-content;
+            gap: rem(25);
         }
         &--legend{
             padding-bottom: rem(20);
