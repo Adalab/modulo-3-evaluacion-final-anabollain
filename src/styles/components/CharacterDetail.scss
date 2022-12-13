@@ -7,7 +7,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     height: 75vh;
 }
 
@@ -38,22 +37,23 @@
         align-items: center;
         z-index: 10;
         position: relative;
-        gap: rem(20);
+        gap: rem(50);
     }
 }
 
 .detail{
     &__img{
+        //General properties
         width: rem(350);
         height: rem(350);
         border-radius: 50%;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         object-fit: cover;
         object-position: center;
-        align-self: center;
-        margin-right: rem(50);
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
     &__info{
+        //General properties
+        width: rem(250);
         //Display
         display: flex;
         flex-direction: column;

@@ -1,5 +1,6 @@
 //react libraries
 import {NavLink} from 'react-router-dom';
+import { useEffect } from 'react';
 //image
 import background from '../images/rick-n-morty-wallpaper.jpg'
 //styles
@@ -13,6 +14,7 @@ function CharacterCard({eachData, handleBackground}) {
     handleBackground(`url(${background})`);
   }
 
+  //RETURN
   return (
         <li>
           <NavLink to={`/character/${eachData.id}`} className='card__link' onClick={handleClick}>

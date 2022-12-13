@@ -6,12 +6,19 @@ import logo from '../images/Rick_and_Morty.png'
 import '../styles/components/Header.scss';
 
 
-function Header() {
+function Header(props) {
 
+    //EVENT FUNCTIONS
+    //Handle background image
+    const handleClick = () => {
+        props.handleBackground('');
+    }
+
+    //RETURN
   return (
     <header className='header'>
             <h1 className='header__title'>Rick And Morty</h1>
-            <Link to='/' className='header__link'>
+            <Link to='/' className='header__link' onClick={handleClick}>
                 <img src={logo} alt="Rick and Morty Logo" className='header__link--logo'/>
             </Link>
         </header>

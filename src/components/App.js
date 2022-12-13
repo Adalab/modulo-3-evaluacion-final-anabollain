@@ -46,14 +46,15 @@ function App() {
 
   //USE EFFECT
   useEffect (()=> {
-    callToApi().then ((data) => {
-      setDataCharacters(data);
-      setIsLoading(false);
-    });
+    setTimeout(()=>{
+      callToApi().then ((data) => {
+        setDataCharacters(data);
+        setIsLoading(false);
+      });
+    }, 800)
   }, []);
 
-
-  //EVENT FUNCTIONS
+   //EVENT FUNCTIONS
   //Filters
   //Lifting function to get name input information from user
   const handleNameInput = (value) => {
@@ -74,7 +75,6 @@ function App() {
   //Function to find the character responding to the id of the selected url
   const findCharacter = (value) => {
     return dataCharacters.find((eachData) => parseInt(eachData.id) === parseInt(value));
-    //setFoundCharacter(foundCharacter);
   }
   //Reset button
   const handleResetBtn = () =>{
@@ -103,8 +103,8 @@ function App() {
   //RETURN
   if (isLoading === false){
     return (
-      < >
-        <Header />
+      <>
+        <Header handleBackground={handleBackground}/>
         <Routes>
           <Route path='/' element={
             <main>

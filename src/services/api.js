@@ -9,10 +9,9 @@ const callToApi = () => {
                 name: eachData.name,
                 species: eachData.species,
                 photo: eachData.image,
-                origin: eachData.origin.name,
+                origin: eachData.origin.name === 'unknown'? 'No clue' : eachData.origin.name,
                 episodes: eachData.episode.length,
-                status: eachData.status,
-                //don't forget the id: id: eachData.id ? eachData.id : crypto.randomUUID(), 
+                status: eachData.status
             };
         });
         return cleanData;

@@ -29,7 +29,7 @@ function CharacterDetail(props) {
     }else if(foundCharacter.status === 'Dead'){
       return <i className="fa-solid fa-skull"></i>
     }else{
-      return <span>Unknown</span>;
+      return <span>No clue</span>;
     }
   };
   //Handle background image
