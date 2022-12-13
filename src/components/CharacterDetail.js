@@ -43,18 +43,19 @@ function CharacterDetail(props) {
     
     return (
       <main className='main__detail'>
-        <div className='main__detail--background'></div>
-        <article className='detail'>
-        <NavLink to='/' className='detail__info--link' onClick={handleClick}><GoBackBtn/></NavLink>
-          <img className='detail__img' src={foundCharacter.photo} alt={foundCharacter.name}/>
-          <div className='detail__info'>
-            <h2 className='detail__info--title' >{foundCharacter.name}</h2>
-            <ul className='detail__info--list' >
-              <li className='detail__info--list--item'><span>Status</span> <span>{renderIconStatus()}</span></li>
-              <li className='detail__info--list--item'><span>Species</span> <span>{renderIconSpecies()}</span></li>
-              <li className='detail__info--list--item'><span>Origin</span> <span>{foundCharacter.origin}</span></li>
-              <li className='detail__info--list--item'><span>Episodes</span> <span>{foundCharacter.episodes}</span></li>
-            </ul>
+        <article className='article'>
+        <NavLink to='/' className='article__link' onClick={handleClick}><GoBackBtn/></NavLink>
+          <div className='article__detail'>
+            <img className='detail__img' src={foundCharacter.photo} alt={foundCharacter.name}/>
+            <div className='detail__info'>
+              <h2 className='detail__info--title' >{foundCharacter.name}</h2>
+              <ul className='detail__info--list' >
+                <li className='detail__info--list--item'><span>Status</span> <span>{renderIconStatus()}</span></li>
+                <li className='detail__info--list--item'><span>Species</span> <span>{renderIconSpecies()}</span></li>
+                <li className='detail__info--list--item'><span>Origin</span> <span>{foundCharacter.origin}</span></li>
+                <li className='detail__info--list--item'><span>Episodes</span> <span>{foundCharacter.episodes}</span></li>
+              </ul>
+            </div>
           </div>
         </article>
       </main>

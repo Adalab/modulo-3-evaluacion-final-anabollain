@@ -11,7 +11,8 @@
     height: 75vh;
 }
 
-.detail{
+.article{
+    //General properties
     height: rem(500);
     width: rem(800);
     border-radius: rem(50);
@@ -21,8 +22,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    padding: rem(25);
     position: relative;
+    &__link{
+        @include linkReset();
+        position: absolute;
+        align-self: flex-start;
+        transform: translate(rem(-350), rem(10));
+    }
+    &__detail{
+        //Display
+        justify-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        position: relative;
+        gap: rem(20);
+    }
+}
+
+.detail{
     &__img{
         width: rem(350);
         height: rem(350);
@@ -40,7 +60,7 @@
         gap: rem(15);
         &--title{
             font-size: rem(20);
-            padding-top: rem(20);
+            padding-bottom: rem(20);
         }
         &--list{
             //General properties
@@ -53,22 +73,6 @@
             &--item{
                 display: grid;
                 grid-template-columns: 0.6fr 0.6fr;
-            }
-        }
-        &--link{
-            @include linkReset();
-            font-size: rem(22);
-            align-self: flex-start;
-            transform: translate(rem(-25), rem(30));
-            width: rem(40);
-            height: rem(40);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            &:hover{
-                background-color: $color-green-op;
-                color: $color-white;
-                border-radius: 50%;
             }
         }
     }
