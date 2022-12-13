@@ -10,6 +10,7 @@
         &:hover{
             background-color: $color-green;
             color: $color-white;
+            box-shadow: 0 0 rem(25) $color-blue;
         }
     }
 }

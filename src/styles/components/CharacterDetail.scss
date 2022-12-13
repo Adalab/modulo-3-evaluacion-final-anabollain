@@ -8,17 +8,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    &--background{
-        width: 100vw;
-        height: 130vh;
-        background-image: url('../../images/rick-n-morty-wallpaper.jpg');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: absolute;
-        transform: translateY(-25vh);
-        opacity: 0.3;
-    }
+    height: 75vh;
 }
 
 .detail{
@@ -26,6 +16,7 @@
     width: rem(800);
     border-radius: rem(50);
     background-color: $color-white;
+    box-shadow: 0 0 rem(25) $color-blue;
     //Display
     display: flex;
     justify-content: center;
@@ -40,6 +31,7 @@
         object-position: center;
         align-self: center;
         margin-right: rem(50);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
     &__info{
         //Display
@@ -58,6 +50,10 @@
             display: flex;
             flex-direction: column;
             gap: rem(15);
+            &--item{
+                display: grid;
+                grid-template-columns: 0.6fr 0.6fr;
+            }
         }
         &--link{
             @include linkReset();
@@ -70,7 +66,8 @@
             align-items: center;
             justify-content: center;
             &:hover{
-                background-color: $color-pink;
+                background-color: $color-green-op;
+                color: $color-white;
                 border-radius: 50%;
             }
         }

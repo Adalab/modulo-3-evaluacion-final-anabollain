@@ -15,6 +15,8 @@ import Loading from './Loading';
 import NotFoundPage from './NotFoundPage';
 //routes
 import {Routes, Route} from 'react-router-dom';
+//images
+import pattern from '../images/pattern.jpg'
 //styles
 import '../styles/App.scss';
 
@@ -34,7 +36,15 @@ function App() {
   //Tools
   //Flag to get fetch status and a loader while waiting for the response
   const [isLoading, setIsLoading] = useState(true);
-
+  //Background 
+  const [background, setBackground] = useState('');
+  //Select body and add styles for background image
+  document.body.style.backgroundImage = background;
+  document.body.style.backgroundColor = 'rgba(255,255,255,0.6)';
+  document.body.style.backgroundBlendMode = 'lighten';
+  document.body.style.backgroundRepeat = 'no-repeat';
+  document.body.style.backgroundSize = 'cover';
+  
 
   //USE EFFECT
   useEffect (()=> {
@@ -87,21 +97,25 @@ function App() {
     .filter((eachData) => inputSpecies === '' ? true :  eachData.species.toLowerCase() === inputSpecies.toLowerCase())
     .filter((eachData) => inputStatus === 'all' ? true : eachData.status.toLowerCase() === inputStatus.toLowerCase());
   };
+  //Change background image
+  const handleBackground = (value) => {
+    setBackground(value)
+  };
 
   //RETURN
   if (isLoading === false){
     return (
-      <>
+      < >
         <Header />
         <Routes>
           <Route path='/' element={
             <main>
               <Filters inputName={inputName} handleNameInput={handleNameInput} inputSpecies={inputSpecies} handleSpeciesInput={handleSpeciesInput} inputStatus={inputStatus} handleStatusInput={handleStatusInput} handleResetBtn={handleResetBtn}/>
-              <CharacterList dataCharacters={filteredCharacters()} inputName={inputName}/>
+              <CharacterList dataCharacters={filteredCharacters()} inputName={inputName} handleBackground={handleBackground}/>
             </main>
           }
           />
-          <Route path='/character/:id' element={<CharacterDetail findCharacter={findCharacter}/>}/>
+          <Route path='/character/:id' element={<CharacterDetail findCharacter={findCharacter} handleBackground={handleBackground}/>}/>
           <Route path='*' element={<NotFoundPage/>}/>
         </Routes>
       </>

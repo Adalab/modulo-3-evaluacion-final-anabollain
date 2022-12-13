@@ -14,9 +14,9 @@ function CharacterDetail(props) {
   //Icon for dead or alive
   const renderIconSpecies = () => {
     if(foundCharacter.species === 'Alien'){
-      return <i className="fa-brands fa-reddit-alien" style={{color: "red"}}></i>
+      return <i className="fa-brands fa-reddit-alien"></i>
     }else if(foundCharacter.species === 'Human'){
-      return <i className="fa-solid fa-user" style={{color: "red"}}></i>;
+      return <i className="fa-solid fa-user"></i>;
     }else{
       return null;
     }
@@ -24,29 +24,35 @@ function CharacterDetail(props) {
   //Icon for alien or human
   const renderIconStatus = () => {
     if(foundCharacter.status === 'Alive'){
-      return <i className="fa-solid fa-heart" style={{color: "red"}}></i>
+      return <i className="fa-solid fa-heart"></i>
     }else if(foundCharacter.status === 'Dead'){
-      return <i className="fa-solid fa-skull" style={{color: "red"}}></i>
+      return <i className="fa-solid fa-skull"></i>
     }else{
-      return null;
+      return <span>Unknown</span>;
     }
   };
+  //Handle background image
+  const handleClick = () => {
+    props.handleBackground('');
+  }
 
+
+  //RETURN
   if (foundCharacter !== undefined){
-    //RETURN
+    
     return (
       <main className='main__detail'>
         <div className='main__detail--background'></div>
         <article className='detail'>
-        <NavLink to='/' className='detail__info--link'><i class="fa-solid fa-arrow-left"></i></NavLink>
+        <NavLink to='/' className='detail__info--link' onClick={handleClick}><i className="fa-solid fa-arrow-left"></i></NavLink>
           <img className='detail__img' src={foundCharacter.photo} alt={foundCharacter.name}/>
           <div className='detail__info'>
             <h2 className='detail__info--title' >{foundCharacter.name}</h2>
             <ul className='detail__info--list' >
-              <li className='detail__list--item'>Status: {renderIconStatus()}</li>
-              <li className='detail__list--item'>Species: {renderIconSpecies()}</li>
-              <li className='detail__list--item'>Origin: {foundCharacter.origin}</li>
-              <li className='detail__list--item'>Episodes: {foundCharacter.episodes}</li>
+              <li className='detail__info--list--item'><span>Status</span> <span>{renderIconStatus()}</span></li>
+              <li className='detail__info--list--item'><span>Species</span> <span>{renderIconSpecies()}</span></li>
+              <li className='detail__info--list--item'><span>Origin</span> <span>{foundCharacter.origin}</span></li>
+              <li className='detail__info--list--item'><span>Episodes</span> <span>{foundCharacter.episodes}</span></li>
             </ul>
           </div>
         </article>

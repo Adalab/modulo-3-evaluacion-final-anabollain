@@ -9,7 +9,7 @@
         font-size: rem(22);
         padding: rem(5);
         &:hover{
-            color: $color-green;
+            color: $color-white;
         }
     }
     &__item{
@@ -17,6 +17,7 @@
         width: rem(280);
         height: rem(380);
         border-radius: rem(20);
+        background-color: rgba(255,255,255,0.6);
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         //Display
         display: flex;
@@ -24,9 +25,14 @@
         text-align: center;
         gap: rem(12);
         &:hover{
-            //background-color: $color-green;
-            border-radius: rem(30);
+            background-image: $color-gradient;
+            border-radius: rem(40);
+            box-shadow: 0 0 rem(15) $color-blue;
+            .fa-circle-info{
+                scale: 1.2;
+            }
         }
+        
         &--img{
             width: 100%;
             border-top-left-radius: rem(20);
@@ -35,8 +41,8 @@
             object-fit: cover;
             object-position: center center;
             &:hover{
-                border-top-left-radius: rem(30);
-                border-top-right-radius: rem(30);
+                border-top-left-radius: rem(40);
+                border-top-right-radius: rem(40); 
             }
         }
         &--title{

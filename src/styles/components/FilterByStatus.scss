@@ -6,12 +6,13 @@
 .form{
     &__radio{
         //General properties
+        cursor: pointer;
         @include fieldset ();
+        //Display
         display: flex;
         gap: rem(20);
         padding-left: rem(20);
         padding-right: rem(20);
-        cursor: pointer;
         &--legend{
             display: inline;
         }

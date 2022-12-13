@@ -11,7 +11,7 @@ const callToApi = () => {
                 photo: eachData.image,
                 origin: eachData.origin.name,
                 episodes: eachData.episode.length,
-                status: eachData.status
+                status: eachData.status,
                 //don't forget the id: id: eachData.id ? eachData.id : crypto.randomUUID(), 
             };
         });
