@@ -35,7 +35,7 @@ function App() {
   //Flag to get fetch status and a loader while waiting for the response
   const [isLoading, setIsLoading] = useState(true);
   //Background 
-  const [background, setBackground] = useState('');
+  const [background, setBackground] = useState('linear-gradient(rgba(14, 193, 220, 0.512), rgba(89, 222, 36, 0.589))');
   //Select body and add styles for background image
   document.body.style.backgroundImage = background;
   document.body.style.backgroundColor = 'rgba(255,255,255,0.6)';

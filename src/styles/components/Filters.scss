@@ -20,6 +20,7 @@
     width: rem(250);
     border-radius: rem(20);
     padding: rem(40) rem(40) rem(40) rem(40);
+    background-color: rgba(255,255,255,0.6);
     box-shadow: rgba(97, 129, 160, 0.2) 0px 8px 24px;
     margin-bottom: rem(40);
     @include mediaTablet(){
@@ -27,7 +28,6 @@
         height: rem(300);
         width:rem(600);
         border-radius: rem(20);
-        background-color: rgba(255,255,255,0.6);
         padding: rem(40);
         //Display
         gap: rem(20);

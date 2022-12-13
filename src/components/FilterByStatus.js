@@ -15,7 +15,7 @@ function FilterByStatus(props) {
             <div className='form__radio--container'>
                 <label htmlFor="all" className='form__radio--label'>
                     <input type="radio" id="all" name="status" value="all" className='form__radio--input' checked={props.inputStatus === 'all'} onChange={handleInput} />
-                    <span className='form__radio--icon'><i class="fa-solid fa-reply-all"></i></span>
+                    <span className='form__radio--icon'><i className="fa-solid fa-reply-all"></i></span>
                 </label>
                 <label htmlFor="alive" className='form__radio--label'>
                     <input type="radio" id="alive" name="status" value="alive" className='form__radio--input' checked={props.inputStatus === 'alive'} onChange={handleInput} />

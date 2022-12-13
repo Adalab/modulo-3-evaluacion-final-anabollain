@@ -2,6 +2,7 @@
 @import '../core/reset';
 @import '../core/functions';
 @import '../core/mixins';
+@import '../core/mediaqueries';
 
 .main__detail{
     display: flex;
@@ -12,67 +13,125 @@
 
 .article{
     //General properties
+    width: rem(250);
     height: rem(500);
-    width: rem(800);
-    border-radius: rem(50);
     background-color: $color-white;
     box-shadow: 0 0 rem(25) $color-blue;
+    border-radius: rem(50);
     //Display
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: rem(25);
+    padding: rem(15);
     position: relative;
+    @include mediaTablet(){
+        //General properties
+        width: rem(650);
+        height: rem(400);
+    }
+    @include mediaDesktop(){
+        //General properties
+        width: rem(800);
+        height: rem(500);
+        padding: rem(25);
+    }
     &__link{
         @include linkReset();
         position: absolute;
         align-self: flex-start;
-        transform: translate(rem(-350), rem(10));
+        transform: translate(rem(-85), rem(10));
+        @include mediaTablet(){
+            transform: translate(rem(-280), rem(10));
+        }
+        @include mediaDesktop(){
+            transform: translate(rem(-350), rem(10));
+        }
     }
     &__detail{
         //Display
         justify-self: center;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 10;
         position: relative;
         gap: rem(50);
+        padding-top: rem(20);
+        @include mediaTablet(){
+            flex-direction: row;
+            padding-top: rem(0);
+        }
+        @include mediaDesktop(){
+            
+        }
     }
 }
 
 .detail{
     &__img{
         //General properties
-        width: rem(350);
-        height: rem(350);
+        width: rem(180);
+        height: rem(180);
         border-radius: 50%;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         object-fit: cover;
         object-position: center;
+        @include mediaTablet(){
+            width: rem(280);
+            height: rem(280);
+        }
+        @include mediaDesktop(){
+            width: rem(350);
+            height: rem(350);
+        }
     }
     &__info{
         //General properties
-        width: rem(250);
+        width: rem(150);
         //Display
         display: flex;
         flex-direction: column;
         gap: rem(15);
+        @include mediaTablet(){
+            width: rem(200);
+        }
+        @include mediaDesktop(){
+            width: rem(250);
+        }
         &--title{
-            font-size: rem(20);
-            padding-bottom: rem(20);
+            font-size: rem(14);
+            @include mediaTablet(){
+                font-size: rem(18);
+                padding-bottom: rem(15);
+            }
+            @include mediaDesktop(){
+                font-size: rem(20);
+                padding-bottom: rem(20);
+            }
+            
         }
         &--list{
             //General properties
             list-style: none;
-            font-size: rem(14);
+            font-size: rem(12);
+            gap: rem(10);
             //Display
             display: flex;
             flex-direction: column;
-            gap: rem(15);
+            @include mediaDesktop(){
+                font-size: rem(14);
+                gap: rem(15);
+            }
             &--item{
                 display: grid;
-                grid-template-columns: 0.6fr 0.6fr;
+                grid-template-columns: 1fr 1fr;
+                @include mediaTablet(){
+                    grid-template-columns: 0.4fr 0.4fr;
+                }
+                @include mediaDesktop(){
+                    grid-template-columns: 0.6fr 0.6fr;
+                }
             }
         }
     }
