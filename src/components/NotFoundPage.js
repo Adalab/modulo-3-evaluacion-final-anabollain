@@ -1,5 +1,6 @@
 //react libraries
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 //components
 import GoBackBtn from './GoBackBtn';
 //images
@@ -8,12 +9,12 @@ import notFound from '../images/notfound.png'
 import '../styles/components/NotFoundPage.scss';
 
 
-function NotFoundPage(props) {
+function NotFoundPage({handleBackground}) {
 
   //EVENT FUNCTIONS
   //Handle background image
   const handleClick = () => {
-    props.handleBackground('linear-gradient(rgba(14, 193, 220, 0.512), rgba(89, 222, 36, 0.589))');
+    handleBackground('linear-gradient(rgba(14, 193, 220, 0.512), rgba(89, 222, 36, 0.589))');
   }
 
  
@@ -30,7 +31,7 @@ function NotFoundPage(props) {
 }
 
 NotFoundPage.propTypes = {
-
+  handleBackground: PropTypes.func
 };
 
 export default NotFoundPage;

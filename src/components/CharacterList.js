@@ -1,5 +1,6 @@
 //components
 import CharacterCard from './CharacterCard';
+import PropTypes from 'prop-types';
 //images
 import error from '../images/error.jpg'
 //styles
@@ -24,6 +25,7 @@ function CharacterList({dataCharacters, inputName, handleBackground}) {
     
   }
 
+  //RETURN
   return (
     <section className='characters'>
       <ul className='card'>{renderData()}</ul>
@@ -32,7 +34,9 @@ function CharacterList({dataCharacters, inputName, handleBackground}) {
 }
 
 CharacterList.propTypes = {
-
+  dataCharacters: PropTypes.array.isRequired, 
+  inputName: PropTypes.string.isRequired, 
+  handleBackground: PropTypes.func 
 };
 
 export default CharacterList;

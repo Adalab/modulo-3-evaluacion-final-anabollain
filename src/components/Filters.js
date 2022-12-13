@@ -1,3 +1,5 @@
+//react libraries
+import PropTypes from 'prop-types';
 //components
 import FilterByName from './FilterByName';
 import FilterBySpecies from './FilterBySpecies';
@@ -7,6 +9,7 @@ import ResetBtn from './ResetBtn';
 import '../styles/components/Filters.scss';
 
 function Filters(props) {
+  
   //EVENT FUNCTIONS
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -26,7 +29,13 @@ function Filters(props) {
 }
 
 Filters.propTypes = {
-
+  inputName: PropTypes.string.isRequired,
+  handleNameInput: PropTypes.func.isRequired,
+  inputSpecies: PropTypes.string.isRequired,
+  handleSpeciesInput: PropTypes.func.isRequired,
+  inputStatus: PropTypes.string.isRequired,
+  handleStatusInput: PropTypes.func.isRequired,
+  handleResetBtn: PropTypes.func.isRequired
 };
 
 export default Filters;

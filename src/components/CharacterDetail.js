@@ -1,17 +1,20 @@
 //react libraries
 import { useParams, NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+//image
+import background from '../images/rick-n-morty-wallpaper.jpg'
 //components
 import NotFoundPage from './NotFoundPage';
 import GoBackBtn from './GoBackBtn';
 //styles
 import '../styles/components/CharacterDetail.scss';
 
-function CharacterDetail(props) {
+function CharacterDetail({ findCharacter, handleBackground }) {
 
   //Get URL id 
   const params = useParams();
   //Function to get the info of the selected element from the original array, id of url matches with each object id of the array
-  const foundCharacter = props.findCharacter(params.id);
+  const foundCharacter = findCharacter(params.id);
   //Icon for dead or alive
   const renderIconSpecies = () => {
     if(foundCharacter.species === 'Alien'){
@@ -34,13 +37,13 @@ function CharacterDetail(props) {
   };
   //Handle background image
   const handleClick = () => {
-    props.handleBackground('linear-gradient(rgba(14, 193, 220, 0.512), rgba(89, 222, 36, 0.589))');
+    handleBackground('linear-gradient(rgba(14, 193, 220, 0.512), rgba(89, 222, 36, 0.589))');
   }
 
 
   //RETURN
   if (foundCharacter !== undefined){
-    
+    document.body.style.backgroundImage = (`url(${background})`);    
     return (
       <main className='main__detail'>
         <article className='article'>
@@ -61,15 +64,16 @@ function CharacterDetail(props) {
       </main>
       );
   }else{
+    document.body.style.backgroundImage = ('linear-gradient(rgba(14, 193, 220, 0.512), rgba(89, 222, 36, 0.589))'); 
     return(
       <NotFoundPage/>
     )
   }
-  
 }
 
 CharacterDetail.propTypes = {
-
+  findCharacter: PropTypes.func.isRequired,
+  handleBackground: PropTypes.func
 };
 
 export default CharacterDetail;

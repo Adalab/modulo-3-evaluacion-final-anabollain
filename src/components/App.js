@@ -1,6 +1,8 @@
 import React from 'react';
 //react libraries
 import {useState, useEffect} from 'react';
+//routes
+import {Routes, Route} from 'react-router-dom';
 //props
 //import PropTypes from 'prop-types';
 //services
@@ -13,8 +15,6 @@ import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Loading from './Loading';
 import NotFoundPage from './NotFoundPage';
-//routes
-import {Routes, Route} from 'react-router-dom';
 //styles
 import '../styles/App.scss';
 
@@ -51,7 +51,7 @@ function App() {
         setDataCharacters(data);
         setIsLoading(false);
       });
-    }, 800)
+    }, 100)
   }, []);
 
    //EVENT FUNCTIONS
@@ -97,10 +97,11 @@ function App() {
   };
   //Change background image
   const handleBackground = (value) => {
-    setBackground(value)
+    setBackground(value);
   };
 
-  //RETURN
+
+ //RETURN
   if (isLoading === false){
     return (
       <>

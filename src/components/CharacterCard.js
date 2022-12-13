@@ -1,6 +1,6 @@
 //react libraries
 import {NavLink} from 'react-router-dom';
-import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 //image
 import background from '../images/rick-n-morty-wallpaper.jpg'
 //styles
@@ -30,6 +30,8 @@ function CharacterCard({eachData, handleBackground}) {
 }
 
 CharacterCard.propTypes = {
+  eachData: PropTypes.object.isRequired,
+  handleBackground: PropTypes.func
 
 };
 
