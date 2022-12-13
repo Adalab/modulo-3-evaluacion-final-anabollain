@@ -1,0 +1,17 @@
+@import '../core/variables';
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/mixins';
+
+.fa-arrow-left{
+    width: rem(40);
+    height: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        background-color: $color-green-op;
+        color: $color-white;
+        border-radius: 50%;
+    }
+}

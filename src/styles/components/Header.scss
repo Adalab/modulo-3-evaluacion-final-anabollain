@@ -18,15 +18,15 @@
         @include linkReset ();
         @keyframes  resize {
             0%   {scale: 1;}
-            25%  {scale: 1.2;}
+            25%  {scale: 1.1;}
             50%  {scale: 1;}
-            75%  {scale: 1.2;}
+            75%  {scale: 1.1;}
             100% {scale: 1;}
         }
         &--logo{
             width: rem(380);
             &:hover{
-                animation: resize 1s linear 0.5s infinite alternate;
+                animation: resize 1s linear 0s infinite alternate;
             }
         }
     }

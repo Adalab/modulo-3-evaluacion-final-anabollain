@@ -1,5 +1,7 @@
 //components
 import CharacterCard from './CharacterCard';
+//images
+import error from '../images/error.jpg'
 //styles
 import '../styles/components/CharacterList.scss';
 
@@ -14,7 +16,10 @@ function CharacterList({dataCharacters, inputName, handleBackground}) {
         return <CharacterCard key={eachData.id} eachData={eachData} handleBackground={handleBackground}/>
       })
     }else{
-      return <p> Oops, looks like no character responds to the name {inputName}. Try again with another one!</p>
+      return (<article className='card__error'>
+        <img src={error} alt="Crazy Rick and Morty" className='card__error--img'/>
+        <p className='card__error--text'> Oops, looks like no character responds to the name <span className='card__error--text--word'>{inputName}</span>. Try again with another one!</p>
+      </article>);
     }
     
   }

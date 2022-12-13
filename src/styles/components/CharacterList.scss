@@ -17,4 +17,33 @@
     justify-content: center;
     align-items: center;
     gap: rem(30);
+    &__error{
+        //General properties
+        width: rem(500);
+        height: rem(350);
+        border-radius: rem(20);
+        padding: rem(15);
+        background-color: rgba(255,255,255,0.6);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        //Display
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: rem(15);
+        &--img{
+            width: rem(400);
+            border-radius: rem(20);
+        }
+        &--text{
+            width: rem(300);
+            color: $color-green;
+            text-align: center;
+            font-size: rem(12);
+            &--word{
+                font-weight: bold;
+                color: $color-pink;
+            }
+        }
+    }
 }

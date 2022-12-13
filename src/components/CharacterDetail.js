@@ -2,6 +2,7 @@
 import { useParams, NavLink } from 'react-router-dom';
 //components
 import NotFoundPage from './NotFoundPage';
+import GoBackBtn from './GoBackBtn';
 //styles
 import '../styles/components/CharacterDetail.scss';
 
@@ -44,7 +45,7 @@ function CharacterDetail(props) {
       <main className='main__detail'>
         <div className='main__detail--background'></div>
         <article className='detail'>
-        <NavLink to='/' className='detail__info--link' onClick={handleClick}><i className="fa-solid fa-arrow-left"></i></NavLink>
+        <NavLink to='/' className='detail__info--link' onClick={handleClick}><GoBackBtn/></NavLink>
           <img className='detail__img' src={foundCharacter.photo} alt={foundCharacter.name}/>
           <div className='detail__info'>
             <h2 className='detail__info--title' >{foundCharacter.name}</h2>

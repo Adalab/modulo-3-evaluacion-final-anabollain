@@ -15,8 +15,6 @@ import Loading from './Loading';
 import NotFoundPage from './NotFoundPage';
 //routes
 import {Routes, Route} from 'react-router-dom';
-//images
-import pattern from '../images/pattern.jpg'
 //styles
 import '../styles/App.scss';
 
@@ -116,7 +114,7 @@ function App() {
           }
           />
           <Route path='/character/:id' element={<CharacterDetail findCharacter={findCharacter} handleBackground={handleBackground}/>}/>
-          <Route path='*' element={<NotFoundPage/>}/>
+          <Route path='*' element={<NotFoundPage />}/>
         </Routes>
       </>
     );
