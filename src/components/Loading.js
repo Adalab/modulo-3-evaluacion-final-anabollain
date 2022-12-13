@@ -6,7 +6,7 @@ function Loading() {
 
   //RETURN
   return (
-    <main className='main'>
+    <main className='mainload'>
       <div className="spinner-box">
         <div className="pulse-container">
           <div className="pulse-bubble pulse-bubble-1"></div>

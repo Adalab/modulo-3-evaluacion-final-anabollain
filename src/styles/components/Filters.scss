@@ -2,13 +2,42 @@
 @import '../core/reset';
 @import '../core/functions';
 @import '../core/mixins';
+@import '../core/mediaqueries';
 
-.form{
-    //General properties
-    height: 20vh;
+.main__form{
     //Display
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: rem(50);
+}
+
+.form{
+    //Display
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: rem(35);
+    width: rem(250);
+    border-radius: rem(20);
+    padding: rem(40) rem(40) rem(40) rem(40);
+    box-shadow: rgba(97, 129, 160, 0.2) 0px 8px 24px;
+    margin-bottom: rem(40);
+    @include mediaTablet(){
+        //General properties
+        height: rem(300);
+        width:rem(600);
+        border-radius: rem(20);
+        background-color: rgba(255,255,255,0.6);
+        padding: rem(40);
+        //Display
+        gap: rem(20);
+    }
+    @include mediaDesktop(){
+        height: 15vh;
+        width: 100vw;
+        box-shadow: none;
+        background-color: transparent;
+        flex-direction: row;
+        gap: rem(50);
+    }
 }

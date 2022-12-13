@@ -14,7 +14,7 @@ function Filters(props) {
 
   //RETURN
   return (
-    <section>
+    <section className='main__form'>
       <form className='form' onSubmit={handleSubmit}>
         <FilterByName inputName={props.inputName}  handleNameInput={props.handleNameInput}/>
         <FilterBySpecies inputSpecies={props.inputSpecies} handleSpeciesInput={props.handleSpeciesInput}/>

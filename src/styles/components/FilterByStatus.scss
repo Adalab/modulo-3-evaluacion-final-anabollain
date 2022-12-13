@@ -2,6 +2,7 @@
 @import '../core/reset';
 @import '../core/functions';
 @import '../core/mixins';
+@import '../core/mediaqueries';
 
 .form{
     &__radio{
@@ -9,12 +10,24 @@
         cursor: pointer;
         @include fieldset ();
         //Display
+        width: 100%;
         display: flex;
-        gap: rem(20);
-        padding-left: rem(20);
-        padding-right: rem(20);
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(25);
+        @include mediaDesktop(){
+            width: fit-content;
+        }
         &--legend{
-            display: inline;
+            padding-bottom: rem(20);
+            @include mediaTablet(){
+                transform: translateY(rem(7));
+                float: left;
+            }
+        }
+        &--container{
+            display: flex;
+            gap: rem(25);
         }
         &--label{
             //padding-right: rem(20);

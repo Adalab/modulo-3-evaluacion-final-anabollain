@@ -2,6 +2,7 @@
 @import '../core/reset';
 @import '../core/functions';
 @import '../core/mixins';
+@import '../core/mediaqueries';
 
 .header{
     //General properties
@@ -24,10 +25,14 @@
             100% {scale: 1;}
         }
         &--logo{
-            width: rem(380);
+            width: rem(280);
             &:hover{
                 animation: resize 1s linear 0s infinite alternate;
             }
+            @include mediaTablet(){
+                width: rem(370);
+            }
+            
         }
     }
 }

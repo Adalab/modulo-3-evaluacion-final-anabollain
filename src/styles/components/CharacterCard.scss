@@ -7,15 +7,14 @@
     &__link{
         @include linkReset();
         font-size: rem(22);
-        padding: rem(5);
         &:hover{
             color: $color-white;
         }
     }
     &__item{
         //General properties
-        width: rem(280);
-        height: rem(380);
+        width: rem(250);
+        height: rem(370);
         border-radius: rem(20);
         background-color: rgba(255,255,255,0.6);
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

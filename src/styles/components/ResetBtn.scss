@@ -2,11 +2,18 @@
 @import '../core/reset';
 @import '../core/functions';
 @import '../core/mixins';
+@import '../core/mediaqueries';
 
 .form{
     &__reset{
         cursor: pointer;
         @include input ();
+        @include mediaTablet(){
+            align-self: flex-end;
+        }
+        @include mediaDesktop(){
+            align-self: auto;
+        }
         &:hover{
             background-color: $color-green;
             color: $color-white;

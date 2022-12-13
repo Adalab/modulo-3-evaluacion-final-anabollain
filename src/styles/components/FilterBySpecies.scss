@@ -2,12 +2,24 @@
 @import '../core/reset';
 @import '../core/functions';
 @import '../core/mixins';
+@import '../core/mediaqueries';
+
 
 .form{
     &__select{
         //General properties
         @include fieldset ();
-        padding-left: rem(50);
+        display: flex;
+        flex-direction: column;
+        gap: rem(25);
+        @include mediaTablet(){
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include mediaDesktop(){
+            width: fit-content;
+        }
         &--label{
             padding-right: rem(20);
         }
