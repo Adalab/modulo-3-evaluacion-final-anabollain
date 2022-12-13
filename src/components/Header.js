@@ -11,7 +11,7 @@ function Header(props) {
     //EVENT FUNCTIONS
     //Handle background image
     const handleClick = () => {
-        props.handleBackground('');
+        props.handleBackground('linear-gradient(rgba(14, 193, 220, 0.512), rgba(89, 222, 36, 0.589))');
     }
 
     //RETURN

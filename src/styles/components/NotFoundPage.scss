@@ -2,46 +2,62 @@
 @import '../core/reset';
 @import '../core/functions';
 @import '../core/mixins';
+@import '../core/mediaqueries';
 
-.main{
+.main__found{
     height: 75vh;
-    //Display
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: rem(5);
-    @keyframes  resize {
-        0%   {scale: 1;}
-        25%  {scale: 1.1;}
-        50%  {scale: 1;}
-        75%  {scale: 1.1;}
-        100% {scale: 1;}
-    }
-    &__icon{
-        @include linkReset();
-        align-self: flex-start;
-        padding-left: rem(500);
-        .fa-arrow-left{
-            width: rem(40);
-            height: rem(40);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            &:hover{
-                background-color: $color-green-op;
-                color: $color-white;
-                border-radius: 50%;
+    align-items: flex-start;
+    &--container{
+        width: rem(250);
+        //Display
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: rem(5);
+        position: relative;
+        @include mediaTablet(){
+            width: rem(500);
+            height: rem(480);
+        }
+        @keyframes  resize {
+            0%   {scale: 1;}
+            25%  {scale: 1.1;}
+            50%  {scale: 1;}
+            75%  {scale: 1.1;}
+            100% {scale: 1;}
+        }
+        &--icon{
+            @include linkReset();
+            align-self: flex-start;
+            .fa-arrow-left{
+                width: rem(40);
+                height: rem(40);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover{
+                    background-color: $color-green-op;
+                    color: $color-white;
+                    border-radius: 50%;
+                }
+            }
+        }
+        &--img{
+            width: rem(300);
+            @include mediaTablet(){
+                width: rem(450);
+            }
+        }
+        &--title{
+            color: $color-green;
+            font-size: rem(12);
+            animation: resize 1s linear 0s infinite alternate;
+            @include mediaTablet(){
+                font-size: rem(16);
             }
         }
     }
-    &__img{
-        width: rem(450);
-    }
-    &__title{
-        color: $color-green;
-        font-size: rem(16);
-        animation: resize 1s linear 0s infinite alternate;
-    }
-    
 }

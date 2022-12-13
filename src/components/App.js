@@ -114,7 +114,7 @@ function App() {
           }
           />
           <Route path='/character/:id' element={<CharacterDetail findCharacter={findCharacter} handleBackground={handleBackground}/>}/>
-          <Route path='*' element={<NotFoundPage />}/>
+          <Route path='*' element={<NotFoundPage handleBackground={handleBackground} />}/>
         </Routes>
       </>
     );

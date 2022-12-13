@@ -34,7 +34,7 @@ function CharacterDetail(props) {
   };
   //Handle background image
   const handleClick = () => {
-    props.handleBackground('');
+    props.handleBackground('linear-gradient(rgba(14, 193, 220, 0.512), rgba(89, 222, 36, 0.589))');
   }
 
 
