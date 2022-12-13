@@ -27,12 +27,12 @@
         &--logo{
             width: rem(280);
             &:hover{
+                //Animation
                 animation: resize 1s linear 0s infinite alternate;
             }
             @include mediaTablet(){
                 width: rem(370);
-            }
-            
+            }   
         }
     }
 }

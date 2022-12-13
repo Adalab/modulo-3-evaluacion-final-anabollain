@@ -6,6 +6,7 @@
 
 .form{
     &__reset{
+        //General properties
         cursor: pointer;
         @include input ();
         @include mediaTablet(){
@@ -15,6 +16,7 @@
             align-self: auto;
         }
         &:hover{
+            //General properties
             background-color: $color-green;
             color: $color-white;
             box-shadow: 0 0 rem(25) $color-blue;

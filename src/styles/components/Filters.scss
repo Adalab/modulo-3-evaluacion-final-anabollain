@@ -11,18 +11,18 @@
 }
 
 .form{
+    //General properties
+    width: rem(250);
+    border-radius: rem(20);
+    box-shadow: rgba(97, 129, 160, 0.2) 0px 8px 24px;
+    padding: rem(20) rem(20) rem(20) rem(20);
+    margin-bottom: rem(40);
     //Display
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: rem(20);
-    width: rem(250);
-    border-radius: rem(20);
-    padding: rem(20) rem(20) rem(20) rem(20);
-    background-color: rgba(255,255,255,0.6);
-    box-shadow: rgba(97, 129, 160, 0.2) 0px 8px 24px;
-    margin-bottom: rem(40);
     @include mediaTablet(){
         //General properties
         height: rem(300);
@@ -33,10 +33,11 @@
         gap: rem(20);
     }
     @include mediaDesktop(){
+        //General properties
         height: 15vh;
         width: 100vw;
         box-shadow: none;
-        background-color: transparent;
+        //Display
         flex-direction: row;
         gap: rem(50);
     }

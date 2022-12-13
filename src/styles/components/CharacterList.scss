@@ -6,6 +6,7 @@
 
 
 .characters{
+    //Display
     display: flex;
     justify-content: center;
     margin-bottom: rem(50);
@@ -26,7 +27,7 @@
         height: rem(250);
         border-radius: rem(20);
         padding: rem(15);
-        background-color: rgba(255,255,255,0.6);
+        background-color: $-color-grey-op;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         //Display
         display: flex;
@@ -46,6 +47,7 @@
             }
         }
         &--text{
+            //General properties
             width: rem(150);
             color: $color-green;
             text-align: center;

@@ -5,10 +5,12 @@
 @import '../core/mediaqueries';
 
 .main__detail{
+    //General properties
+    height: 75vh;
+    //Display
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
 }
 
 .article{
@@ -18,11 +20,11 @@
     background-color: $color-white;
     box-shadow: 0 0 rem(25) $color-blue;
     border-radius: rem(50);
+    padding: rem(15);
     //Display
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: rem(15);
     position: relative;
     @include mediaTablet(){
         //General properties
@@ -36,7 +38,9 @@
         padding: rem(25);
     }
     &__link{
+        //General properties
         @include linkReset();
+        //Display
         position: absolute;
         align-self: flex-start;
         transform: translate(rem(-85), rem(10));
@@ -48,22 +52,20 @@
         }
     }
     &__detail{
+        //General properties
+        padding-top: rem(20);
         //Display
         justify-self: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        z-index: 10;
-        position: relative;
         gap: rem(50);
-        padding-top: rem(20);
+        position: relative;
+        z-index: 10;
         @include mediaTablet(){
             flex-direction: row;
             padding-top: rem(0);
-        }
-        @include mediaDesktop(){
-            
         }
     }
 }
@@ -75,6 +77,7 @@
         height: rem(180);
         border-radius: 50%;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        //Display
         object-fit: cover;
         object-position: center;
         @include mediaTablet(){

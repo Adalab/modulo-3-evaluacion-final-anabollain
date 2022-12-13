@@ -9,8 +9,8 @@
         //General properties
         cursor: pointer;
         @include fieldset ();
-        //Display
         width: 100%;
+        //Display
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -30,10 +30,8 @@
             display: flex;
             gap: rem(25);
         }
-        &--label{
-            //padding-right: rem(20);
-        }
         &--icon{
+            //General properties
             cursor: pointer;
             color: $color-dark;
             padding-left: rem(10);

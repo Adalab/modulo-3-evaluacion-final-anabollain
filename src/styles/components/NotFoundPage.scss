@@ -5,11 +5,14 @@
 @import '../core/mediaqueries';
 
 .main__found{
+    //General properties
     height: 75vh;
+    //Display
     display: flex;
     justify-content: center;
     align-items: flex-start;
     &--container{
+        //General properties
         width: rem(250);
         //Display
         display: flex;
@@ -33,12 +36,15 @@
             @include linkReset();
             align-self: flex-start;
             .fa-arrow-left{
+                //General properties
                 width: rem(40);
                 height: rem(40);
+                //Display
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 &:hover{
+                    //General properties
                     background-color: $color-green-op;
                     color: $color-white;
                     border-radius: 50%;
@@ -52,8 +58,10 @@
             }
         }
         &--title{
+            //General properties
             color: $color-green;
             font-size: rem(12);
+            //Animation
             animation: resize 1s linear 0s infinite alternate;
             @include mediaTablet(){
                 font-size: rem(16);

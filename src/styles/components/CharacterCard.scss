@@ -16,7 +16,7 @@
         width: rem(250);
         height: rem(370);
         border-radius: rem(20);
-        background-color: rgba(255,255,255,0.6);
+        background-color: $-color-grey-op;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         //Display
         display: flex;
@@ -24,6 +24,7 @@
         text-align: center;
         gap: rem(12);
         &:hover{
+            //General properties
             background-image: $color-gradient;
             border-radius: rem(40);
             box-shadow: 0 0 rem(15) $color-blue;
@@ -33,12 +34,10 @@
         }
         
         &--img{
-            width: 100%;
+            //General properties
             border-top-left-radius: rem(20);
             border-top-right-radius: rem(20);
             height: rem(250);
-            object-fit: cover;
-            object-position: center center;
             &:hover{
                 border-top-left-radius: rem(40);
                 border-top-right-radius: rem(40); 

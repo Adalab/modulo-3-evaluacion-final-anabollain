@@ -4,13 +4,16 @@
 @import '../core/mixins';
 
 .fa-arrow-left{
+    //General properties
     font-size: rem(18);
     width: rem(40);
     height: rem(40);
+    //Display
     display: flex;
     align-items: center;
     justify-content: center;
     &:hover{
+        //General properties
         background-color: $color-green-op;
         color: $color-white;
         border-radius: 50%;

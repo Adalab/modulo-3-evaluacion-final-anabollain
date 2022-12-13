@@ -9,11 +9,14 @@
     &__select{
         //General properties
         @include fieldset ();
+        //Display
         display: flex;
         flex-direction: column;
         gap: rem(10);
         @include mediaTablet(){
+            //General properties
             width: 100%;
+            //Display
             flex-direction: row;
             justify-content: space-between;
             gap: rem(25);
@@ -28,6 +31,7 @@
             @include input ();
             cursor: pointer;
             &:hover{
+                //General properties
                 background-color: $color-green;
                 color: $color-white;
                 box-shadow: 0 0 rem(25) $color-blue;
