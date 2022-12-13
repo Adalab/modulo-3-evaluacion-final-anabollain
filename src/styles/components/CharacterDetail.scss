@@ -33,9 +33,9 @@
     }
     @include mediaDesktop(){
         //General properties
-        width: rem(800);
-        height: rem(500);
-        padding: rem(25);
+        width: rem(750);
+        height: rem(450);
+        padding: rem(20);
     }
     &__link{
         //General properties
@@ -48,7 +48,7 @@
             transform: translate(rem(-280), rem(10));
         }
         @include mediaDesktop(){
-            transform: translate(rem(-350), rem(10));
+            transform: translate(rem(-330), rem(10));
         }
     }
     &__detail{
@@ -100,7 +100,7 @@
             width: rem(200);
         }
         @include mediaDesktop(){
-            width: rem(250);
+            width: rem(230);
         }
         &--title{
             font-size: rem(14);
