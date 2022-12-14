@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import FilterByName from '../components/FilterByName';
 
-test('Checks the title component', () => {
+test('Checks the name label in filter component', () => {
   // Arrange
   render(<FilterByName />);
   // Act

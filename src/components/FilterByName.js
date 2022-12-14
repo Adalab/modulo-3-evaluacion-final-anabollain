@@ -14,7 +14,7 @@ function FilterByName({inputName, handleNameInput}) {
   return (
     <div className='form__text'>
       <label htmlFor='name' className='form__text--label'>Name</label>
-      <input type="text" id='name' name='name'className='form__text--input' value={inputName} onChange={handleInput}/>
+      <input type="text" id='name' name='name'className='form__text--input' placeholder='e.g. Rick Sanchez' value={inputName} onChange={handleInput}/>
     </div>
     );
 }
