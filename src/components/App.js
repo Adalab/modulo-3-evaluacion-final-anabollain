@@ -27,6 +27,8 @@ function App() {
   //Filters
   //FilterByName input
   const [inputName, setInputName] = useState(ls.get('nameInput', ''));
+  //FilterByEpisode input
+  const [inputEpisode, setInputEpisode] = useState('');
   //FilterBySpecies input
   const [inputSpecies, setInputSpecies] = useState(ls.get('speciesInput', ''));
   //FilterByStatus input
@@ -61,6 +63,10 @@ function App() {
     setInputName(value);
     ls.set('nameInput', value);
   }
+  //Lifting function to get episodes input information from user
+  const handleEpisodesInput = (value) => {
+    setInputEpisode(value);
+  }
   //Lifting function to get species select input information from user
   const handleSpeciesInput = (value) => {
     setInputSpecies(value);
@@ -93,7 +99,8 @@ function App() {
     return dataCharacters
     .filter((eachData) => eachData.name.toLowerCase().includes(inputName.toLowerCase()))
     .filter((eachData) => inputSpecies === '' ? true :  eachData.species.toLowerCase() === inputSpecies.toLowerCase())
-    .filter((eachData) => inputStatus === 'all' ? true : eachData.status.toLowerCase() === inputStatus.toLowerCase());
+    .filter((eachData) => inputStatus === 'all' ? true : eachData.status.toLowerCase() === inputStatus.toLowerCase())
+    .filter((eachData) => inputEpisode === ''? true : eachData.episodes === parseInt(inputEpisode));;
   };
   //Change background image
   const handleBackground = (value) => {
@@ -109,7 +116,7 @@ function App() {
         <Routes>
           <Route path='/' element={
             <main>
-              <Filters inputName={inputName} handleNameInput={handleNameInput} inputSpecies={inputSpecies} handleSpeciesInput={handleSpeciesInput} inputStatus={inputStatus} handleStatusInput={handleStatusInput} handleResetBtn={handleResetBtn}/>
+              <Filters inputName={inputName} handleNameInput={handleNameInput} inputSpecies={inputSpecies} handleSpeciesInput={handleSpeciesInput} inputStatus={inputStatus} handleStatusInput={handleStatusInput} handleResetBtn={handleResetBtn} inputEpisode={inputEpisode} handleEpisodesInput={handleEpisodesInput}/>
               <CharacterList dataCharacters={filteredCharacters()} inputName={inputName} handleBackground={handleBackground}/>
             </main>
           }
